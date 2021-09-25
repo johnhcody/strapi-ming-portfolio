@@ -1,4 +1,6 @@
 import { AppProps } from 'next/app'
+import '../styles/main.scss'
+import 'tailwindcss/tailwind.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -6,4 +8,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default MyApp
