@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import moment from 'moment'
 
 const Footer:React.FunctionComponent = () => {
 
@@ -27,7 +28,7 @@ const Footer:React.FunctionComponent = () => {
                 <a href="mailto:mingkwn@gmail.com?subject=Getting%20in%20Touch" target="_blank"><i className="fas fa-envelope-open-text"></i></a>
             </div>
             <div className="bottom-text-wrappe flex flex-col items-center justify-center">
-                <p className="font-sans pt-4">	&copy; Mingkwan Rattanakot 2021 </p>
+                <p className="font-sans pt-4">	&copy;{` Mingkwan Rattanakot ${moment().format('YYYY')}`}  </p>
             </div>
         </div>
         </>

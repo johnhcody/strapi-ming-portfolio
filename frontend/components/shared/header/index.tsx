@@ -1,19 +1,10 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import Modal from 'react-modal'
-
-
+import { Routes } from '../../../routes'
 
 export const Header = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false)
-    const openModal = () => {
-        setModalIsOpen(true);
-    }
-
-    const closeModal = () => { 
-        setModalIsOpen(false);
-    }
-
     
     return (
         <div className="header-wrapper">
@@ -21,9 +12,12 @@ export const Header = () => {
                 <a> M.R. </a>
             </Link>
             <div className="header-right-wrapper">
-                <i onClick={openModal} className="fas fa-bars"></i>
+                {modalIsOpen ? 
+                <i onClick={() => setModalIsOpen(true)} className="fas fa-times transition-opacity duration-1000 ease-in-out"></i>
+                : <i onClick={() => setModalIsOpen(true)} className="fas fa-bars transition-opacity duration-1000 ease-in-out"></i>
+                }
             </div>
-            <Modal className="modal" ariaHideApp={false} isOpen={modalIsOpen} onRequestClose={closeModal} closeTimeoutMS={1000} style={{
+            <Modal className="modal" ariaHideApp={false} isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} closeTimeoutMS={1000} style={{
                 overlay: {
                     backgroundColor: 'transparent'
                 },
@@ -45,20 +39,20 @@ export const Header = () => {
                 }
             }}>
                 <div className="modal-link-wrapper">
-                        <Link  href="/about">
-                            <a onClick={closeModal} > About </a>
+                        <Link  href={Routes.ABOUT}>
+                            <a onClick={() => setModalIsOpen(false)} > About </a>
                         </Link>
-                        <Link href="/portfolio">
-                            <a onClick={closeModal} > Articles </a>
+                        <Link href={Routes.ARTICLES}>
+                            <a onClick={() => setModalIsOpen(false)} > Articles </a>
                         </Link>
-                        <Link href="/blog">
-                            <a onClick={closeModal} > Blog </a>
+                        <Link href={Routes.BLOG}>
+                            <a onClick={() => setModalIsOpen(false)} > Blog </a>
                         </Link>
-                        <Link href="/projects">
-                            <a onClick={closeModal} > Projects </a>
+                        <Link href={Routes.PROJECTS}>
+                            <a onClick={() => setModalIsOpen(false)} > Projects </a>
                         </Link>
-                        <Link href="/cv">
-                            <a onClick={closeModal} > Contact </a>
+                        <Link href={Routes.CV}>
+                            <a onClick={() => setModalIsOpen(false)} > Contact </a>
                         </Link>
                         <a></a>
                     </div> 
