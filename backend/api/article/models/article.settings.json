@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "articles",
   "info": {
-    "name": "Article"
+    "name": "article",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -11,13 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Body": {
+    "body": {
       "type": "richtext"
     },
-    "Image": {
+    "image": {
       "collection": "file",
       "via": "related",
       "allowedTypes": [

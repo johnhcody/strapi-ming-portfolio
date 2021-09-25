@@ -1,5 +1,5 @@
-import BaseLayout from '@components/layout/baseLayout';
-import Footer from '@components/layout/footer';
+import BaseLayout from '@components/Layout/baseLayout';
+import Footer from '@components/Layout/footer';
 import SplashImage from '@components/splashImage';
 import React from 'react'
 import styles from '../styles/Home.module.scss'

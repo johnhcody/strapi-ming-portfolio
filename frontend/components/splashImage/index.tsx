@@ -3,22 +3,21 @@ import Typed from 'react-typed'
 
 const SplashImage:React.FunctionComponent= () => {
 
+    const [width, setWidth] = useState<number>(null);
+    function handleWindowSizeChange() {
+            setWidth(window.innerWidth)
+        }
 
+    useEffect(() => {
+        if (typeof window !== 'undefined') setWidth(window.innerWidth)
+        window.addEventListener('resize', handleWindowSizeChange)
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange)
+        }
+    }, []);
 
-        const [width, setWidth] = useState<number>(null);
-        function handleWindowSizeChange() {
-                setWidth(window.innerWidth);
-            }
+    let isMobile: boolean = (width <= 768)
 
-        useEffect(() => {
-            if (typeof window !== 'undefined') setWidth(window.innerWidth)
-            window.addEventListener('resize', handleWindowSizeChange);
-            return () => {
-                window.removeEventListener('resize', handleWindowSizeChange);
-            }
-        }, []);
-
-        let isMobile: boolean = (width <= 768);
     return (
         <div className="index-page-wrapper">
             <Typed
@@ -30,7 +29,7 @@ const SplashImage:React.FunctionComponent= () => {
                 typeSpeed={40}
                 backSpeed={50}
                 backDelay={1000}
-                className={isMobile ? "typed-text-mobile" : "typed-text-desktop"}
+                className={isMobile ? 'typed-text-mobile' : 'typed-text-desktop'}
                 loop
             />
 

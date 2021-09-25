@@ -8,7 +8,7 @@ export type Article = {
     title: string
     intro: string
     description: string
-    body: string[]
+    body: string
     mainPhoto: string
     linkUrl: string
     linkDescription: string

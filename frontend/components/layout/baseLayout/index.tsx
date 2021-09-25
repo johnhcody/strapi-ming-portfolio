@@ -1,4 +1,4 @@
-import Header from '../../shared/header'
+import Header from '../../Shared/Header'
 import Head from 'next/head'
 import React from 'react'
 

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Modal from 'react-modal'
 import { Routes } from '../../../routes'
 
-export const Header = () => {
+const Header: React.FunctionComponent = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false)
     
     return (
